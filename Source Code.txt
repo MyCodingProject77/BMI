@@ -1,0 +1,33 @@
+
+
+
+
+   btnCalculate_Click
+
+
+ double heightCm = Convert.ToDouble(txtHeight.Text);
+ double weightPounds = Convert.ToDouble(txtWeight.Text);
+
+ // Convert pounds to kg
+ double weightKg = weightPounds * 0.453592;
+
+ // Convert cm to meters
+ double heightM = heightCm / 100;
+
+ // BMI formula
+ double bmi = weightKg / (heightM * heightM);
+
+ lblResult.Text = "BMI: " + bmi.ToString("0.00");
+
+ if (bmi < 18)
+ {
+     lblStatus.Text = "Underweight";
+ }
+ else if (bmi >=18 && bmi <= 25)
+ {
+     lblStatus.Text = "Normal";
+ }
+ else
+ {
+     lblStatus.Text = "Overweight";
+ }
